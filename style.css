@@ -1,0 +1,553 @@
+@media (max-width: 600px) {
+  .page_nav,
+  .page_menu,
+  .page_main {
+    width: calc(100% - 24px);
+    margin-top: 12px;
+  }
+  .page_main {
+    margin-bottom: 12px;
+  }
+  nav {
+    height: auto;
+    min-height: 56px;
+    padding: 12px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav_left_logo {
+    font-size: 20px;
+  }
+  .nav_right {
+    gap: 10px;
+    margin-left: auto;
+  }
+  .nav_right .status {
+    font-size: 12px;
+    padding: 6px 12px;
+    white-space: nowrap;
+  }
+  .menu_bar p {
+    font-size: 20px;
+    margin: 12px 0;
+  }
+  .home,
+  .about,
+  .contact {
+    padding: 28px 20px;
+  }
+  .home .intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .home .intro img {
+    order: -1;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+  }
+  .home .intro h1 {
+    font-size: 32px;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .home .intro h2 {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .home p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .about_grid,
+  .contact_grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .about h1,
+  .contact h1 {
+    font-size: 30px;
+  }
+  .about h2 {
+    font-size: 18px;
+  }
+  .about_card,
+  .about_goal,
+  .contact_card {
+    padding: 20px;
+  }
+  .about .about_lead {
+    margin-bottom: 24px;
+  }
+  .contact p {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  .contact_card > span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body{
+  background-color: #eceff3;
+  min-height: 100vh;
+}
+
+.page_nav{
+  display: block;
+  margin: auto;
+  width: calc(100% - 32px); /* Chừa mỗi bên 16px */idth: 768px;
+  max-width: 768px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  opacity: 1;
+  border-radius: 12px;
+  box-shadow: #666d8014 0px 1.2672px 1.2672px 0px, #666d8014 0px 5.06879px 10.1376px 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  flex-shrink: 1;
+}
+
+nav{
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px ;
+}
+.nav_left_logo{
+  font-size: 24px;
+  font-weight: 700;
+  -webkit-text-stroke: 0.5px black;
+  color: #ffffff; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav_left_logo:hover{
+  color: #000000;
+  -webkit-text-stroke: 0 #ffffff;
+  transition: all 0.3s ease;
+}
+
+.nav_right{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav_right .dark_mode_btn{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #d9dbdc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px;
+}
+/* Phần tử có chú thích */
+[data-tooltip] {
+  position: relative;
+}
+
+/* Khung chú thích */
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+
+  width: max-content;
+  max-width: 220px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #202431;
+  color: white;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  -webkit-text-stroke: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 100;
+}
+
+/* Hiện khi hover hoặc dùng bàn phím chọn nút */
+[data-tooltip]:hover::after,
+[data-tooltip]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav_right .status{
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  background-color: #2ce08f;
+  color: #039754;
+  padding: 5px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.nav_right .status:hover{
+  background-color: #2ce059;
+  color: #059703;
+  transition: 0.3s ease;
+}
+
+.page_menu{
+  flex: 1;
+  display: block;
+  margin: auto;
+  width: calc(100% - 32px); /* Chừa mỗi bên 16px */;
+  max-width: 768px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  opacity: 1;
+  border-radius: 12px;
+  box-shadow: #666d8014 0px 1.2672px 1.2672px 0px, #666d8014 0px 5.06879px 10.1376px 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.menu_bar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu_home{
+  margin-top: 10px;
+  font-weight: 550;
+  font-size: 30px;
+  margin-bottom: 10px;
+  -webkit-text-stroke: #000000 0.5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all;
+}
+.menu_home:hover{
+  color: #000000;
+  -webkit-text-stroke: 0 ;
+  transition: all 0.3s ease;
+}
+.menu_home.active{
+  color: #000000;
+  -webkit-text-stroke: 0;
+}
+
+.menu_about{
+  margin-top: 10px;
+  font-weight: 550;
+  font-size: 30px;
+  margin-bottom: 10px;
+  -webkit-text-stroke: #000000 0.5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all;
+}
+.menu_about:hover{
+  color: #000000;
+  -webkit-text-stroke: 0 #ffffff;
+  transition: all 0.3s ease;
+}
+.menu_about.active{
+  color: #000000;
+  -webkit-text-stroke: 0;
+}
+
+.menu_contact{
+  margin-top: 10px;
+  font-weight: 550;
+  font-size: 30px;
+  margin-bottom: 10px;
+  -webkit-text-stroke: #000000 0.5px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all;
+}
+.menu_contact:hover{
+  color: #000000;
+  -webkit-text-stroke: 0 #ffffff;
+  transition: all 0.3s ease;
+}
+.menu_contact.active{
+  color: #000000;
+  -webkit-text-stroke: 0;
+}
+
+.page_main{
+  flex: 1;
+  display: block;
+  margin: auto;
+  width: calc(100% - 32px); /* Chừa mỗi bên 16px */idth: 768px;
+  max-width: 768px;
+  background-color: #ffffff;
+  margin-top: 20px;
+  opacity: 1;
+  border-radius: 12px;
+  box-shadow: #666d8014 0px 1.2672px 1.2672px 0px, #666d8014 0px 5.06879px 10.1376px 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+}
+
+.home{
+  padding: 48px;
+  text-align: left;
+  color: #202431;
+  font-family: "Inter", sans-serif;
+}
+.home .intro{
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.home .intro .intro_text{
+  flex: 1; /* Chữ dùng phần chiều rộng còn lại */
+  min-width: 0;
+}
+.home .intro h1{
+  margin: 0 0 16px;
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -1px;
+}
+.home .intro img{
+  width: 220px;
+  height: 250px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  display: block;
+}
+.home .intro h2{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #687080;
+}
+.home p{
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #687080;
+}
+.home p:last-child {
+  margin-bottom: 0;
+}
+.about{
+  padding: 48px;
+  text-align: left;
+  color: #202431;
+  font-family: "Inter", sans-serif;
+}
+.about .about_label,
+.about .card_number {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.about .about_label {
+  color: #087a50;
+  margin-bottom: 12px;
+}
+
+.about h1 {
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  margin: 0 0 20px;
+}
+
+.about p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #626b7a;
+  margin: 0;
+}
+
+.about .about_lead {
+  margin-bottom: 32px;
+}
+
+/* Hai thẻ nội dung bằng nhau */
+.about_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about_card {
+  padding: 24px;
+  background-color: #f6f7f9;
+  border: 1px solid #eceef2;
+  border-radius: 16px;
+}
+
+.about .card_number {
+  color: #737c89;
+  margin-bottom: 16px;
+}
+
+.about h2 {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+/* Các nhãn kỹ năng */
+.skill_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.skill_tags span {
+  padding: 6px 10px;
+  background-color: white;
+  border: 1px solid #e5e8ed;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #414858;
+}
+
+/* Khung mục tiêu */
+.about_goal {
+  margin-top: 16px;
+  padding: 24px;
+  background-color: #edf9f2;
+  border: 1px solid #d7eddf;
+  border-radius: 16px;
+}
+
+.about_goal .card_number {
+  color: #087a50;
+}
+
+.contact{
+  padding: 48px;
+  text-align: left;
+  color: #202431;
+  font-family: "Inter", sans-serif;
+}
+
+.contact_label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #087a50;
+}
+
+.contact h1 {
+  margin-bottom: 16px;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.contact p {
+  margin-bottom: 28px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #626b7a;
+}
+
+/* Hai cột trên máy tính */
+.contact_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  background-color: #f6f7f9;
+  border: 1px solid #eceef2;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #202431;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact_card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.contact_card small {
+  display: block;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #626b7a;
+}
+
+.contact_card:hover,
+.contact_card:focus-visible {
+  transform: translateY(-3px);
+  background-color: #edf9f2;
+  border-color: #087a50;
+}
+
+.contact_card:focus-visible {
+  outline: 2px solid #087a50;
+  outline-offset: 3px;
+}
+
+/* Hiệu ứng khi phần nội dung được hiện */
+.home,
+.about,
+.contact {
+  animation: appear 0.4s ease-out;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;                  /* Ban đầu trong suốt */
+    transform: translateY(12px); /* Nằm thấp hơn 12px */
+  }
+
+  to {
+    opacity: 1;                  /* Hiện rõ */
+    transform: translateY(0);    /* Trở về vị trí ban đầu */
+  }
+}
+
+
+
+
