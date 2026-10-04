@@ -52,6 +52,19 @@ nav{
   gap: 20px;
 }
 
+.nav_right .lang_btn{
+  text-decoration: none;
+  color: #000000;
+  font-weight: 800;
+  background-color: #d9dbdc;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
 .nav_right .dark_mode_btn svg{
   display: block;
   width: 100%;

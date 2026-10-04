@@ -36,3 +36,22 @@ $('.menu_contact').click(function (e) {
   $('.menu_contact').addClass('active');
   
 });
+
+
+// CHANGE LANGUAGE
+
+let lang = 'vietnamese';
+$('.lang_btn').click(function (e) { 
+  e.preventDefault();
+  
+  if (lang === 'vietnamese') {
+    lang = 'chinese';
+    $('#vietnamese').prop('hidden', true);
+    $('#chinese').prop('hidden', false);
+  }
+  else{
+    lang = 'vietnamese';
+    $('#vietnamese').prop('hidden', false);
+    $('#chinese').prop('hidden', true);
+  }
+});
