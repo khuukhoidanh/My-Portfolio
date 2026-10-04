@@ -39,19 +39,37 @@ $('.menu_contact').click(function (e) {
 
 
 // CHANGE LANGUAGE
-
-let lang = 'vietnamese';
-$('.lang_btn').click(function (e) { 
+// Mở/đóng: chỉ khi bấm nút chính (chữ L)
+$('.lang_text.main').click(function (e) {
   e.preventDefault();
+  e.stopPropagation();
+  $('.lang_dropdown').toggleClass('open');
+});
+
+// Chọn ngôn ngữ: chỉ các option, KHÔNG lồng trong handler trên
+$('.lang_text').not('.main').click(function (e) {
+  e.preventDefault();
+  e.stopPropagation();
+
+  let lang = $(this).text();
+  var lang_available = [
+    'V',
+    '中',
+    'E'
+  ]
+  // Tắt toàn bộ
+  $.each(lang_available, function(index, value){
+    $('#'+value).prop('hidden', true);
+  });
+
+  $('#'+lang).prop('hidden', false);
   
-  if (lang === 'vietnamese') {
-    lang = 'chinese';
-    $('#vietnamese').prop('hidden', true);
-    $('#chinese').prop('hidden', false);
-  }
-  else{
-    lang = 'vietnamese';
-    $('#vietnamese').prop('hidden', false);
-    $('#chinese').prop('hidden', true);
-  }
+
+  $('.lang_dropdown').removeClass('open');
+});
+
+// Khi bấm đại vào 1 cái gì đó sẽ tắt cái option
+$(document).click(function (e) { 
+  e.preventDefault();
+  $('.lang_dropdown').removeClass('open');
 });

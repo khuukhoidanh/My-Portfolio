@@ -52,17 +52,52 @@ nav{
   gap: 20px;
 }
 
-.nav_right .lang_btn{
-  text-decoration: none;
-  color: #000000;
-  font-weight: 800;
+.lang_ui{
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.lang_ui .lang_dropdown{
+  position: absolute;
+  display: flex;
+  flex-direction: column; 
+  width: 30px;
+  height: 30px;
+  justify-content: flex-start;
+  padding-top: 3px;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 15px;
   background-color: #d9dbdc;
+  z-index: 100;
+  transition: height 0.3s ease, border-radius 0.1s linear;
+}
+
+.lang_dropdown.open {
+  height: 120px;      /* 4 ô x 30px */
+  border-radius: 15px;
+  transition: height 0.3s ease, border-radius 0.1s linear;
+}
+
+
+
+.lang_text{
   width: 30px;
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  color: #000;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.lang_text:hover{
+  text-decoration: underline;
+}
+.lang_text.main:hover{
+  text-decoration: none;
 }
 
 .nav_right .dark_mode_btn svg{
@@ -81,46 +116,6 @@ nav{
   justify-content: center;
   cursor: pointer;
   padding: 5px;
-}
-/* Phần tử có chú thích */
-[data-tooltip] {
-  position: relative;
-}
-
-/* Khung chú thích */
-[data-tooltip]::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-4px);
-
-  width: max-content;
-  max-width: 220px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  background-color: #202431;
-  color: white;
-
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: center;
-  -webkit-text-stroke: 0;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  z-index: 100;
-}
-
-/* Hiện khi hover hoặc dùng bàn phím chọn nút */
-[data-tooltip]:hover::after,
-[data-tooltip]:focus-visible::after {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
 }
 
 .nav_right .status{
