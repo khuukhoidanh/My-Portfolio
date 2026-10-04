@@ -70,6 +70,5 @@ $('.lang_text').not('.main').click(function (e) {
 
 // Khi bấm đại vào 1 cái gì đó sẽ tắt cái option
 $(document).click(function (e) { 
-  e.preventDefault();
   $('.lang_dropdown').removeClass('open');
 });
