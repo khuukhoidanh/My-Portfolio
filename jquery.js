@@ -72,3 +72,28 @@ $('.lang_text').not('.main').click(function (e) {
 $(document).click(function (e) { 
   $('.lang_dropdown').removeClass('open');
 });
+
+// DARK_MODE
+let now_mode = $('.css').attr('href');
+let dark_mode_active = false;
+if(now_mode === 'css/style.css'){
+  dark_mode_active = false;
+}
+else {
+  dark_mode_active = true;
+}
+
+$('.dark_mode_btn').click(function (e) { 
+  e.preventDefault();
+  
+  if (dark_mode_active === false) {
+    $('.css').attr('href', 'css/dark_mode.css');
+    console.log(dark_mode_active);
+    return dark_mode_active = true;
+  }
+  else {
+    $('.css').attr('href', 'css/style.css');
+    console.log(dark_mode_active);
+    return dark_mode_active = false;
+  }
+});
